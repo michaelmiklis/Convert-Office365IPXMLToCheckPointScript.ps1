@@ -14,3 +14,10 @@ Execute the following commandline in a PowerShell Window:
 
 	Convert-Office365IPXMLToCheckPointScript.ps1 -Uri "https://go.microsoft.com/fwlink/?LinkId=533185"
 	
+If you want to save the output of the PowerShell Script to a file use the following commandline:
+
+	Convert-Office365IPXMLToCheckPointScript.ps1 -Uri "https://go.microsoft.com/fwlink/?LinkId=533185" | Out-File myFile.txt
+	
+The Checkpoint import will fail if there are duplicate entries in the file - to avoid this use the following commandline:
+
+	Convert-Office365IPXMLToCheckPointScript.ps1 -Uri "https://go.microsoft.com/fwlink/?LinkId=533185" | Select-Object -Unique | Out-File myFile.txt
